@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!"
+const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789?!. "
 const offset = 12
 
 // Encrypt f func(plaintext string) string
