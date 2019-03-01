@@ -1,5 +1,9 @@
 ## Simple Substitution Encryption
 
+### Installation
+
+`go get github.com/eknowlton/substenc`
+
 Example usage:
 
 Decrypt:
