@@ -18,3 +18,7 @@ Decrypt:
 ### TODO:
 - Add optional iterations
 - Add optional custom alphabet
+
+### Disclaimer
+
+I created this completely out of curiosity and wanted to mess around with golang. This is not a secure encryption algorithm and should not be used as so.
