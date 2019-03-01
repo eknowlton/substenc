@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
+	"flag"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -49,8 +52,16 @@ func Decrypt(cipertext string) string {
 }
 
 func main() {
-	fmt.Println("Encrypt string 'Hello World 123': ")
-	result := Encrypt("Hello World 123")
-	fmt.Printf("Decrypt result: '%s': \n", result)
-	fmt.Println(Decrypt(result))
+	decryptPtr := flag.Bool("decrypt", false, "Decrypt input")
+	flag.Parse()
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	for scanner.Scan() {
+		if *decryptPtr {
+			fmt.Println(Decrypt(scanner.Text()))
+		} else {
+			fmt.Println(Encrypt(scanner.Text()))
+		}
+	}
 }
