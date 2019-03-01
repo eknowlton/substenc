@@ -10,3 +10,7 @@ Decrypt:
 Decrypt:
 
 ```cat cipher-text.txt | ./substenc -decrypt```
+
+### TODO:
+- Add optional iterations
+- Add optional custom alphabet
