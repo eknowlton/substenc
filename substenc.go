@@ -8,19 +8,19 @@ import (
 	"strings"
 )
 
-const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
+const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!"
 const offset = 12
 
 // Encrypt f func(plaintext string) string
 func Encrypt(plaintext string) string {
 	var result strings.Builder
 	for i := 0; i < len(plaintext); i++ {
-		if string(plaintext[i]) == " " {
-			result.WriteString(" ")
+		currentPosition := strings.IndexAny(alphabet, string(plaintext[i]))
+		if currentPosition == -1 {
+			result.WriteString(string(plaintext[i]))
 			continue
 		}
 
-		currentPosition := strings.Index(alphabet, string(plaintext[i]))
 		transposition := currentPosition + offset
 		if transposition > len(alphabet) {
 			transposition = transposition - len(alphabet)
@@ -35,12 +35,12 @@ func Encrypt(plaintext string) string {
 func Decrypt(cipertext string) string {
 	var result strings.Builder
 	for i := 0; i < len(cipertext); i++ {
-		if string(cipertext[i]) == " " {
-			result.WriteString(" ")
+		currentPosition := strings.IndexAny(alphabet, string(cipertext[i]))
+		if currentPosition == -1 {
+			result.WriteString(string(cipertext[i]))
 			continue
 		}
 
-		currentPosition := strings.Index(alphabet, string(cipertext[i]))
 		transposition := currentPosition - offset
 		if transposition < 0 {
 			transposition = transposition + len(alphabet)
