@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
 const offset = 12
 
 // Encrypt f func(plaintext string) string
@@ -49,8 +49,8 @@ func Decrypt(cipertext string) string {
 }
 
 func main() {
-	fmt.Println("Encrypt string 'Hello World': ")
-	result := Encrypt("Hello World")
+	fmt.Println("Encrypt string 'Hello World 123': ")
+	result := Encrypt("Hello World 123")
 	fmt.Printf("Decrypt result: '%s': \n", result)
 	fmt.Println(Decrypt(result))
 }
